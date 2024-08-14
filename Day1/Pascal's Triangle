@@ -1,0 +1,23 @@
+//brute(For generating nCr) : O(r), better(For generating nth row) : O(n*r), optimal(For generating complete triangle) : O(n3)->O(n2)
+class Solution {
+public:
+vector<int>rows(int n){
+    long long ans=1;
+    vector<int>row;
+    row.push_back(1);
+    for(int r=1;r<n;r++){ //r from 1 to n-1
+    ans=ans*(n-r);
+    ans=ans/r;
+    row.push_back(ans);
+    }
+ //   row.push_back(1);
+    return row;
+}
+    vector<vector<int>> generate(int numRows) {
+        vector<vector<int>>ans;
+      for(int i=1;i<=numRows;i++){
+        ans.push_back(rows(i));
+      }
+      return ans;
+    }
+};
