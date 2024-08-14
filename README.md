@@ -1,2 +1,2 @@
-# 60DaysOfDSA
-I will share my codes for 60 days or probably the best ones per day if missed all! :)
+# StriverSDE
+I will share my codes of Striver SDE Sheet here :))
