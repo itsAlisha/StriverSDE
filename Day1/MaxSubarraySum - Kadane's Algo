@@ -1,3 +1,37 @@
+//For finding max sum alone
+class Solution {
+public:
+//brute : O(n3), better : O(n2)
+/*
+    int maxSubArray(vector<int>& nums) {
+       
+        int sum=0,maxsum=INT_MIN;
+        for(int i=0;i<nums.size();i++){
+            sum=0;
+            for(int j=i;j<nums.size();j++){
+                sum+=nums[j];
+                maxsum=max(sum,maxsum);
+            }
+        }
+        return maxsum;
+    }
+*/
+//optimal : O(n)
+//doesn't work if all values in array are negative
+
+
+//it basically checks that sum jo peeche se aa rha vs the next element itself, who is bigger to fit in sum and if maxsum<sum, update maxsum
+ int maxSubArray(vector<int>& nums) {
+    int sum=0, maxi=INT_MIN ;
+    for(int i=0;i<nums.size();i++){
+        sum=max(sum+nums[i],nums[i]);
+       maxi=max(sum,maxi);
+    }
+return maxi;
+ }
+};
+
+//For finding array :
 //{ Driver Code Starts
 #include <bits/stdc++.h>
 
