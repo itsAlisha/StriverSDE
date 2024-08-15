@@ -19,7 +19,7 @@ public:
 //Striver's Approach
 class Solution {
 public:
-//brute - 2 iterations , TC : O(n), SC: O(1)
+//brute - merge sort, better - 2 iterations , TC : O(n), SC: O(1)
     void sortColors(vector<int>& nums) {
        int c1=0,c2=0,c0=0;
        for(int i=0;i<nums.size();i++){
@@ -39,3 +39,21 @@ public:
        }
     }
 };
+
+//optimal - 3 pointers, TC : O(n), SC : O(1)
+void sortColors(vector<int>& nums) {
+    int low=0,mid=0,high=nums.size()-1;
+    while(mid<=high){
+        if(nums[mid]==0){
+            swap(nums[low],nums[mid]);
+            low++;mid++;
+        }
+        else if(nums[mid]==1){
+            mid++;
+        }
+        else{
+            swap(nums[mid],nums[high]);
+            high--;
+        }
+    }
+}
