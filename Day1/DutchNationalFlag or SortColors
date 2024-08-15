@@ -1,0 +1,19 @@
+//MY APPROACH
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        int i=0, j=nums.size()-1;
+        while(i<j){ //sort 0 and 1,2
+            while(i<j && nums[i]==0) i++;
+            while(i<j && (nums[j]==1 || nums[j]==2)) j--;
+                swap(nums[i],nums[j]);
+        }
+         j=nums.size()-1;
+          while(i<j){ //sort 1 and 2
+          while(i<j && nums[i]==1) i++;
+          while(i<j && nums[j]==2) j--;
+                swap(nums[i],nums[j]);
+        }
+    }
+};
+//Striver's Approach
