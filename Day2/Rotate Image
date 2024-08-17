@@ -1,0 +1,23 @@
+class Solution {
+public:
+    void rotate(vector<vector<int>>& matrix) {
+    //brute : TC : O(n2) , SC : O(n2)
+    int n=matrix.size();
+        vector<vector<int>>ans=matrix;
+        for(int i=0;i<matrix.size();i++){
+            for(int j=0;j<matrix[0].size();j++){
+                matrix[j][n-1-i]=ans[i][j];
+            }
+        }
+    }
+    //better/optimal : TC : O(n2), SC :O(1)
+    //   for(int i=0;i<matrix.size()-1;i++){ //check this
+    //         for(int j=i+1;j<matrix[0].size();j++){ //check this
+    //             swap(matrix[i][j],matrix[j][i]);
+    //         }
+    //   }
+    //   for(int i=0;i<matrix.size();i++){
+    //     reverse(matrix[i].begin(),matrix[i].end());
+    //   } 
+    // }
+};
